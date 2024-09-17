@@ -75,6 +75,7 @@ export function Map() {
       })
       setShowNeedForm(false)
       setLocationStaus(0)
+      setCoOrds(null)
     } else if (user && showAssistForm) {
       const userId: Id<"users"> = user._id
       postAssists({
@@ -89,8 +90,10 @@ export function Map() {
       })
       setShowAssistForm(false)
       setLocationStaus(0)
+      setCoOrds(null)
     } else {
-
+      setCoOrds(null)
+      setLocationStaus(0)
       console.warn("no co-ordinates yet: re-submit")
     }
   }
